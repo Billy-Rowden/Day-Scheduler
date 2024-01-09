@@ -41,5 +41,11 @@ $(document).ready(function() {
     var hour = $(this).parent().data("time");
     // save the hour and corresponding of the event in local storage
     localStorage.setItem("event_" + hour, eventText);
+    // add a way to signal to the user that the event has been saved
+    $(this).find("i").removeClass("far fa-save").addClass("fas fa-check");
+      setTimeout(() => {
+        $(this).find("i").removeClass("fas fa-check").addClass("far fa-save"); 
+      }, 1000);
+    // the above code temporarily changes the icon to the right of the text area from a save disk to a check tick.
   });
 });
