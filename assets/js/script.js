@@ -14,4 +14,25 @@ $(document).ready(function() {
         $(this).find(".description").val(savedEvent); // if savedEvent is not null or undefined, the text area displays the saved event text
       }
   });
+
+  function updateTimeBlocks() {
+    var currentHour = dayjs().hour();
+    // retrieves the hour portion from a day.js object that represents the current date and time and stores it in the cariable currentHour
+    
+    $(".time-block").each(function() {
+      var hour = parseInt($(this).data("time"));
+      var description = $(this).find(".description");
+    // if/else statements to give past/present/future classes to hours relative to the currentHour variable
+      if (hour < currentHour) {
+        description.removeClass("present future").addClass("past");
+      } else if (hour === currentHour) {
+        description.removeClass("past future").addClass("present");
+      } else {
+        description.removeClass("past present").addClass("future");
+      }
+    });
+  }
+  updateTimeBlocks(); // Calls the function when the page loads
+  setInterval(updateTimeBlocks, 60000); // Runs the function every minute to update the blocks depending on the time
+  
 });
