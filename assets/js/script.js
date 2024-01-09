@@ -49,8 +49,13 @@ $(document).ready(function() {
     // the above code temporarily changes the icon to the right of the text area from a save disk to a check tick.
   });
 
+  // add a button to clear the local storage (clear the schedule of the day)
   $("#clearScheduleBtn").on("click", function() {
-    localStorage.clear();
-    alert("Schedule cleared.")
-  })
+    var clearConfirm = confirm("Are you sure you wish to clear your schedule?") // confirmation if the user does wish to clear the schedule
+    if (clearConfirm) {
+      localStorage.clear();
+      alert("Schedule cleared.")
+      location.reload(); // reloads the page so once the storage is cleared, the page reloads with empty text areas.
+    }   
+  });
 });

@@ -43,6 +43,10 @@ header {
   border-top: 1px dashed #000000;
 }
 
+.finalHour {
+  border-bottom: 1px dashed #000000;
+}
+
 .past {
   background-color: #4f4e4e;
   color: white;
@@ -69,4 +73,11 @@ header {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
