@@ -34,5 +34,12 @@ $(document).ready(function() {
   }
   updateTimeBlocks(); // Calls the function when the page loads
   setInterval(updateTimeBlocks, 60000); // Runs the function every minute to update the blocks depending on the time
-  
+
+  // Add functionality to the save button
+  $(".saveBtn").on("click", function() {
+    var eventText = $(this).siblings(".description").val();
+    var hour = $(this).parent().data("time");
+    // save the hour and corresponding of the event in local storage
+    localStorage.setItem("event_" + hour, eventText);
+  });
 });
