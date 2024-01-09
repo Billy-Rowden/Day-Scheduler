@@ -16,7 +16,7 @@ This challenge involved designing a day scheduler so that the user can plan thei
 
 ## Deployment
 
-Application deployed at the live GitHub URL: 
+Application deployed at the live GitHub URL: https://billy-rowden.github.io/Day-Scheduler/
 
 ## Usage 
 
