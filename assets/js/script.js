@@ -4,10 +4,14 @@ $(document).ready(function() {
   $("#currentDay").text(dayjs().format("dddd, MMMM D")); 
   // "dddd" represents full name of the day of the week, "MMMM" represents the month, and "D is the day of month without 0s (1 instead of 01)"
 
-  // select all elements with the class time-block
+  // select all elements with the class time-block for function to iterate through
   $(".time-block").each(function() { 
-  // this iterates through each element with the selector (class time-block) so that the function executes for each of those elements
+  // retrieve the value stored in the data-time attribute from the current element, and convert it to an integer.
     var hour = parseInt($(this).data("time"));
-    // retrieves the value stored in the data-time attribute from the current element, and converts it to an integer.
+  // retrieve previously saved event from local storage if value is truthy
+    var savedEvent = localStorage.getItem("event_" + hour);
+      if (savedEvent) {
+        $(this).find(".description").val(savedEvent); // if savedEvent is not null or undefined, the text area displays the saved event text
+      }
   });
 });
