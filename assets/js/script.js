@@ -48,4 +48,9 @@ $(document).ready(function() {
       }, 1000);
     // the above code temporarily changes the icon to the right of the text area from a save disk to a check tick.
   });
+
+  $("#clearScheduleBtn").on("click", function() {
+    localStorage.clear();
+    alert("Schedule cleared.")
+  })
 });
