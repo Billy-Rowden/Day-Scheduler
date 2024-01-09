@@ -58,4 +58,14 @@ $(document).ready(function() {
       location.reload(); // reloads the page so once the storage is cleared, the page reloads with empty text areas.
     }   
   });
+
+  // add a button to save the entire schedule to local storage
+  $("#saveAllBtn").on("click", function() {
+    $(".time-block").each(function() {
+      var hour = $(this).data("time");
+      var eventText = $(this).find(".description").val();
+      localStorage.setItem("event_" + hour, eventText);
+    });
+    alert("Your schedule has been saved."); // alerts user the schedule has been saved
+  });
 });
