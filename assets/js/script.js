@@ -39,7 +39,7 @@ $(document).ready(function() {
   $(".saveBtn").on("click", function() {
     var eventText = $(this).siblings(".description").val();
     var hour = $(this).parent().data("time");
-    // save the hour and corresponding of the event in local storage
+    // save the hour and corresponding text of the event in local storage
     localStorage.setItem("event_" + hour, eventText);
     // add a way to signal to the user that the event has been saved
     $(this).find("i").removeClass("far fa-save").addClass("fas fa-check");
@@ -68,4 +68,5 @@ $(document).ready(function() {
     });
     alert("Your schedule has been saved."); // alerts user the schedule has been saved
   });
+  
 });
